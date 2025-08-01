@@ -12,7 +12,7 @@ type CellProps ={
 
 const cell = ({go , setGo , id , cells , setCells , cell , winningMessage}:CellProps) => {
 
-    const handleclick = (e) => {
+    const handleclick = () => {
         if (winningMessage) return;
         const notTaken = !cells[id]
         
@@ -31,7 +31,7 @@ const cell = ({go , setGo , id , cells , setCells , cell , winningMessage}:CellP
     }
 
     const handleCellChange = (cellToChange: string) => {
-        let copyCells = [...cells];
+        const copyCells = [...cells];
         copyCells[id] = cellToChange;
         setCells(copyCells);
 
